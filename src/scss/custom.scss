@@ -1,0 +1,15 @@
+$theme-colors: (
+  "primary": #0074d9,
+  "danger": #ff4136
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+);
+
+html, body, #root, .App {
+  height: 100%;
+}
+
+@import "node_modules/bootstrap/scss/bootstrap";

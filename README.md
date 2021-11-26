@@ -1,2 +1,2 @@
 # estimatePi
-Monte Carlo Simulation of Pi
+## Monte Carlo Simulation of Pi
