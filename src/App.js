@@ -5,7 +5,7 @@ function App() {
   return (
     <Container fluid>
       <Container className="p-3 text-center h-100">
-        <h1>Monte Carlo Simulation of Pi</h1>
+        <h2>Monte Carlo Simulation of π</h2>
       </Container>
       <PiPlot/>
     </Container>

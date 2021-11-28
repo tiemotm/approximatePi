@@ -6,9 +6,12 @@ function PiPlot() {
     
     //Initial empty data (x, y, colors for markers)
     const initialData = {
+        n: 0,
+        hits: 0,
         x: [],
         y: [],
         colors: [],
+        pi: 0.0,
     }
 
     //Use state for updating data
@@ -46,12 +49,14 @@ function PiPlot() {
         //temp arrays for storing points
         let x = Array.from({length: n}, () => Math.random())
         let y = Array.from({length: n}, () => Math.random())
+        let hits = 0
         let colors = Array.from({length: n}, (v, i) => {
             //Euclidean norm of point
             let norm = Math.sqrt((x[i] ** 2) + (y[i] ** 2))
             
             //If point inside circle color red, if outside color blue
             if(norm < 1){
+                hits++
                 return 'red'
             } else {
                 return 'blue'
@@ -59,17 +64,22 @@ function PiPlot() {
         
         })
 
+        let pi = (4 * (hits/n))
+
         //Update data
         setData({
+            n: n,
+            hits: hits,
             x: x,
             y: y,
-            colors: colors
+            colors: colors,
+            pi: pi,
         })
     }
 
     return (
         <Container>
-            <Row className="d-flex justify-content-center">
+            <Row className="d-flex justify-content-center text-center">
                 <Container fluid="md" className="ratio ratio-1x1">
                     <Plot
                         data={[
@@ -126,6 +136,7 @@ function PiPlot() {
                         }}
                         />
                 </Container>
+                {data.pi ? <h2 className="p-0">π ≈ {data.pi}</h2> : ""}
             </Row>
             <Row>
                 <Form onSubmit={handleSubmit}>
