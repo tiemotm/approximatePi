@@ -1,12 +1,4 @@
-$theme-colors: (
-  "primary": #0074d9,
-  "danger": #ff4136
-);
-
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-);
+$enable-responsive-font-sizes: true;
 
 html, body, #root, .App {
   height: 100%;

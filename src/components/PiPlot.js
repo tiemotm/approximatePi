@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Plot from "react-plotly.js";
-import {Container, Row, Form, Button} from 'react-bootstrap'
+import {Container, Row, Col, Form, Button} from 'react-bootstrap'
 
 function PiPlot() {
     
@@ -26,12 +26,6 @@ function PiPlot() {
         console.log("Changed to: " + e.target.value)
     }
     
-    //Reset input value
-    const resetInput = () => {
-        setInput("")
-        console.log("Resetted form")
-    }
-
     //If submitted form check if input value is not empty, compute data and reset form
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -42,27 +36,35 @@ function PiPlot() {
         
         console.log("Computed data:")
         console.log(data)
-        resetInput()
+        //resetInput()
+    }
+
+    const resetForm = () => {
+        setData(initialData)
+        setInput("")
     }
 
     const estimatePi = (n) => {
         //temp arrays for storing points
-        let x = Array.from({length: n}, () => Math.random())
-        let y = Array.from({length: n}, () => Math.random())
+        let x = Array(n)
+        let y = Array(n)
+        let colors = Array(n)
         let hits = 0
-        let colors = Array.from({length: n}, (v, i) => {
-            //Euclidean norm of point
-            let norm = Math.sqrt((x[i] ** 2) + (y[i] ** 2))
+
+        for (let i = 0; i < n; i++) {
+            x[i] = Math.random();
+            y[i] = Math.random();
             
+            let norm = Math.sqrt((x[i] ** 2) + (y[i] ** 2))
+
             //If point inside circle color red, if outside color blue
             if(norm < 1){
                 hits++
-                return 'red'
+                colors[i] = "red"
             } else {
-                return 'blue'
+                colors[i] = "blue"
             }
-        
-        })
+        }
 
         let pi = (4 * (hits/n))
 
@@ -80,7 +82,7 @@ function PiPlot() {
     return (
         <Container>
             <Row className="d-flex justify-content-center text-center">
-                <Container fluid="md" className="ratio ratio-1x1">
+                <Container fluid="lg" className="ratio ratio-1x1">
                     <Plot
                         data={[
                             {
@@ -100,11 +102,17 @@ function PiPlot() {
                             xaxis: {
                                 fixedrange: true,
                                 range: [0, 1],
+                                mirror: true,
+                                ticks: 'outside',
+                                showline: true,
                             },
                             
                             yaxis: {
                                 fixedrange: true,
                                 range: [0, 1],
+                                mirror: true,
+                                ticks: 'outside',
+                                showline: true,
                             },
                             
                             shapes: [
@@ -118,8 +126,9 @@ function PiPlot() {
                                     y1: '1',
                                     line: {
                                         color: 'black',
+                                        width: ''
                                     }
-                                }
+                                },
                             ]
                         }}
                         
@@ -136,22 +145,28 @@ function PiPlot() {
                         }}
                         />
                 </Container>
-                {data.pi ? <h2 className="p-0">π ≈ {data.pi}</h2> : ""}
+                {data.pi ? <h2 className="p-3">π ≈ {data.pi}</h2> : ""}
             </Row>
-            <Row>
+            <Row className="px-5">
                 <Form onSubmit={handleSubmit}>
-                    <Container className="p-2 d-flex justify-content-center">
-                        <div className="me-2">
-                            <Form.Control
-                                type="number"
-                                value={input}
-                                placeholder="Enter number"
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div>
-                            <Button type="submit">Calculate</Button>
-                        </div>
+                    <Container className="py-1 px-0 d-flex justify-content-center">
+                        <Row>
+                            <Col lg className="py-1 px-0">
+                                <Form.Control
+                                    className=""
+                                    type="number"
+                                    value={input}
+                                    placeholder="Enter number"
+                                    onChange={handleChange}
+                                />
+                            </Col>
+                            <Col className="py-1 px-0">
+                                <div className="d-flex justify-content-center">
+                                    <Button className="me-2" type="submit">Calculate</Button>
+                                    <Button className="px-4" onClick={resetForm}>Reset</Button>
+                                </div>
+                            </Col>
+                        </Row>
                     </Container>
                 </Form>
             </Row>
