@@ -82,7 +82,7 @@ function PiPlot() {
     return (
         <Container>
             <Row className="d-flex justify-content-center text-center">
-                <Container fluid="lg" className="ratio ratio-1x1">
+                <Container fluid className="ratio ratio-1x1">
                     <Plot
                         data={[
                             {
@@ -151,7 +151,7 @@ function PiPlot() {
                 <Form onSubmit={handleSubmit}>
                     <Container className="py-1 px-0 d-flex justify-content-center">
                         <Row>
-                            <Col lg className="py-1 px-0">
+                            <Col className="py-1 px-0">
                                 <Form.Control
                                     className=""
                                     type="number"
@@ -160,7 +160,7 @@ function PiPlot() {
                                     onChange={handleChange}
                                 />
                             </Col>
-                            <Col className="py-1 px-0">
+                            <Col xl className="py-1 px-0">
                                 <div className="d-flex justify-content-center">
                                     <Button className="me-2" type="submit">Calculate</Button>
                                     <Button className="px-4" onClick={resetForm}>Reset</Button>
