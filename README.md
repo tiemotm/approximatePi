@@ -6,4 +6,3 @@ Different Methods to approximate the value of pi
 ## Methods
 - Monte Carlo Simulation
 - Archimedes Method
-- 
