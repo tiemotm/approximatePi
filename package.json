@@ -1,8 +1,8 @@
 {
-  "homepage": "http://tiemotm.github.io/estimatePi",
-  "name": "estimate_pi",
-  "version": "0.1.0",
-  "private": true,
+  "homepage": "http://tiemotm.github.io/approximatePi",
+  "name": "approximate_pi",
+  "version": "0.1.1",
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",

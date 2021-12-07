@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Plot from "react-plotly.js";
 import {Container, Row, Col, Form, Button} from 'react-bootstrap'
 
-function PiPlot() {
+function MonteCarloMethod() {
     
     //Initial empty data (x, y, colors for markers)
     const initialData = {
@@ -98,7 +98,10 @@ function PiPlot() {
                             
                             autosize: true,
                             showlegend: false,
-                            
+                            margin: {
+                                t: 25, b: 25, l: 25, r: 25
+                            },
+
                             xaxis: {
                                 fixedrange: true,
                                 range: [0, 1],
@@ -145,9 +148,9 @@ function PiPlot() {
                         }}
                         />
                 </Container>
-                {data.pi ? <h2 className="p-3">π ≈ {data.pi}</h2> : ""}
+                {data.pi ? <h2 className="py-3 px-0">π ≈ {data.pi}</h2> : ""}
             </Row>
-            <Row className="px-5">
+            <Row className="px-4 py-2">
                 <Form onSubmit={handleSubmit}>
                     <Container className="py-1 px-0 d-flex justify-content-center">
                         <Row>
@@ -174,4 +177,4 @@ function PiPlot() {
     );
 }
 
-export default PiPlot
+export default MonteCarloMethod

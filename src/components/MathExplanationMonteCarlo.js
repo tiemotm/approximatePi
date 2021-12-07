@@ -1,6 +1,6 @@
 import MathJax from "react-mathjax"
 
-function MathExplanation() {
+function MathExplanationMonteCarlo() {
 
     return (
         <MathJax.Provider>
@@ -21,4 +21,4 @@ function MathExplanation() {
     )
 }
 
-export default MathExplanation
+export default MathExplanationMonteCarlo
