@@ -1,3 +1,9 @@
-# estimatePi
-## Monte Carlo Simulation of Pi
-[View here](https://tiemotm.github.io/estimatePi/)
+# approximatePi
+Different Methods to approximate the value of pi
+
+[View on github-pages](https://tiemotm.github.io/approximatePi/)
+
+## Methods
+- Monte Carlo Simulation
+- Archimedes Method
+- 
