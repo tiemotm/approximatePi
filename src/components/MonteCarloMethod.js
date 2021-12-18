@@ -152,6 +152,16 @@ function MonteCarloMethod() {
             </Row>
             <Row className="px-4 py-2">
                 <Form onSubmit={handleSubmit}>
+                    {
+                        parseInt(input) > 30000 ?
+                            <Row>
+                                <Container fluid className="alert alert-danger text-center">
+                                    Large inputs can cause performace issues
+                                </Container>
+                            </Row>
+                            :
+                            ""
+                    }
                     <Container className="py-1 px-0 d-flex justify-content-center">
                         <Row>
                             <Col className="py-1 px-0">
