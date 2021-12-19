@@ -5,4 +5,5 @@ Different Methods to approximate the value of pi
 
 ## Methods
 - Monte Carlo Simulation
-- Archimedes Method
+- Archimedes Method (Explanation cooming soon)
+- Gregory Leibniz Series (Explanation cooming soon)
