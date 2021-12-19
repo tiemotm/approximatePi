@@ -5,6 +5,7 @@ import ArchimedesMethod from './components/ArchimedesMethod';
 import GregoryLeibnizSeries from "./components/GregoyLeibnizSeries";
 
 // TODO: Write explanation for archimedes method
+// TODO: Write explanation for gregory leibniz series
 function App() {
   return (
     <Container className="p-3" fluid="lg">
