@@ -47,7 +47,7 @@ function App() {
         <Container fluid className="text-center p-4">
             <h2>Gregory Leibniz Series</h2>
         </Container>
-        <Row>
+        <Row className="mb-5">
             <Col>
                 <Container>
                     <h3 className="p-2 text-center">Explanation</h3>

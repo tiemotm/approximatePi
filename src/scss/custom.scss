@@ -1,7 +1,7 @@
 $enable-responsive-font-sizes: true;
 
 html, body, #root, .App {
-  height: 100%;
 }
 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
 @import "node_modules/bootstrap/scss/bootstrap";
