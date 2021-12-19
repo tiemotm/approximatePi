@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap"
 import { useState, useEffect } from "react";
 import Polygon from "./Polygon"
-import { Row, Col, Form, Button } from 'react-bootstrap'
+import { Row, Col, Form } from 'react-bootstrap'
 
 // TODO: change calculation to not use pi constant
 function ArchimedesMethod() {
